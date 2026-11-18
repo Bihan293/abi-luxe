@@ -3,7 +3,7 @@
    Внешний вид (цвета, шрифты, фоны) лежит в site/themes/*.css.
    Чтобы сменить тему салона, поменяйте одну строку @import ниже.
    ============================================================ */
-@import url("themes/light-pink.css");
+@import url("themes/mono-noir.css");
 
     :root{
       --pad:clamp(20px,5vw,40px);
@@ -1992,3 +1992,156 @@
     }
 
     body.is-lightbox{overflow:hidden}
+
+
+    /* ============================================================
+       ABI LUXE — MONO EDITORIAL
+       Чёрно-белая тема: другая типографика, сетка секций,
+       плоские поверхности и более строгая геометрия.
+       ============================================================ */
+    body{background:var(--bg);color:var(--text)}
+    h1,h2,h3{font-weight:500}
+    h1 em,h2 em{color:var(--text)}
+    .eyebrow{color:var(--text);letter-spacing:.3em}
+    .eyebrow::after{background:linear-gradient(90deg,var(--line),transparent)}
+    .eyebrow__num{color:rgba(var(--text-rgb),.7)}
+
+    .header.is-scrolled{
+      background:rgba(var(--panel-rgb),.94);
+      -webkit-backdrop-filter:blur(10px);
+      backdrop-filter:blur(10px);
+      border-bottom-color:var(--line);
+    }
+    .logo__word{font-weight:500;letter-spacing:.18em}
+    .logo__sub{letter-spacing:.4em;color:var(--faint)}
+    .nav a{
+      color:var(--muted);
+      font-size:10.5px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .nav a:hover{color:var(--text)}
+
+    .btn{
+      min-height:46px;
+      padding:13px 24px;
+      border-radius:2px;
+      letter-spacing:.16em;
+    }
+    .btn--gold{box-shadow:none}
+    .btn--ghost{border-color:var(--line);color:var(--text)}
+    .btn--ghost:hover{border-color:var(--text);color:var(--text)}
+
+    .hero__title{
+      font-size:clamp(2.9rem,10vw,7.4rem);
+      line-height:.92;
+      letter-spacing:-.045em;
+      font-weight:500;
+    }
+    .hero__title em{font-style:italic;color:var(--text)}
+    .hero__lead{max-width:42ch;color:var(--muted);font-size:clamp(15px,1.8vw,18px)}
+    .hero__meta{border-top-color:var(--line);color:var(--faint)}
+    .hero__meta b{color:var(--text)}
+    .hero__side{color:var(--faint);letter-spacing:.5em}
+    .hero__glow{opacity:.28;filter:grayscale(1)}
+    .hero__ring{border-color:var(--line)}
+    .hero::before{opacity:.45}
+    .hero__inner{padding-top:126px;padding-bottom:clamp(44px,7vh,82px)}
+
+    @media (min-width:760px){
+      .section-head{
+        display:grid;
+        grid-template-columns:minmax(0,1.25fr) minmax(180px,.55fr);
+        gap:22px 42px;
+        align-items:end;
+        max-width:none;
+      }
+      .section-head .eyebrow{grid-column:1/-1}
+      .section-head h2{grid-column:1;margin:0;max-width:14ch}
+      .section-head .note{grid-column:2;justify-self:end;margin:0;text-align:right;max-width:34ch}
+    }
+    .section-head h2{font-size:clamp(2.15rem,5vw,4.6rem);line-height:.96;letter-spacing:-.035em;font-weight:500}
+    .section-head .note{color:var(--muted)}
+
+    .stats{border-block:1px solid var(--line);background:var(--bg-deep)}
+    .stat__num,.stat__label{color:var(--text)}
+    .stat__label{color:var(--faint)}
+    .stat__plus{color:var(--text)}
+
+    .service{
+      border-radius:2px;
+      background:var(--surface);
+      border-color:var(--line);
+      box-shadow:none;
+    }
+    .service__link{padding:clamp(22px,3vw,32px);gap:18px}
+    .service__link:focus-visible{border-radius:2px}
+    .service__num{color:var(--text)}
+    .service__arrow{
+      border-radius:0;
+      border-color:var(--line);
+      color:var(--text);
+    }
+    .service:hover{
+      transform:none;
+      border-color:var(--text);
+      box-shadow:none;
+    }
+    .service::before{display:none}
+    .service:hover .service__arrow{background:var(--text);border-color:var(--text);color:var(--bg)}
+
+    .why__item{
+      border-radius:2px;
+      background:transparent;
+      border-color:var(--line);
+    }
+    .why__icon{border-radius:2px;background:transparent;border-color:var(--line)}
+    .why__item:hover{background:var(--surface);border-color:var(--text)}
+
+    .shot,.shot__tag{border-radius:0}
+    .shot{border-color:var(--line)}
+    .shot__tag{background:rgba(0,0,0,.68);border-color:rgba(255,255,255,.28)}
+
+    .review,.master,.my-booking{
+      border-radius:2px;
+      background:var(--surface);
+      border-color:var(--line);
+      box-shadow:none;
+    }
+    .review::after{color:rgba(var(--text-rgb),.16)}
+    .review:hover,.master:hover{border-color:var(--text)}
+    .master{background:var(--surface)}
+    .master__role{color:var(--text);letter-spacing:.28em}
+    .master__hours{color:var(--muted)}
+
+    .trust__item,.contact-list li{border-color:var(--line)}
+    .map{border-radius:2px;border-color:var(--line)}
+    .map__badge{background:rgba(0,0,0,.82);border-color:var(--line);color:var(--text)}
+    .map__pin{background:var(--text)}
+    .map__pin::after{border-color:rgba(255,255,255,.45)}
+    .map__road{background:linear-gradient(90deg,transparent,rgba(255,255,255,.2) 20%,rgba(255,255,255,.45) 50%,rgba(255,255,255,.2) 80%,transparent)}
+
+    .wa{background:var(--text);color:var(--bg);border-color:var(--text);box-shadow:none}
+    .wa:hover{background:var(--text);border-color:var(--text);color:var(--bg)}
+    .wa__tip{background:var(--surface);color:var(--text);border-color:var(--line)}
+
+    .modal__panel,.my-booking,.service-choice,.field input,.field select,.field textarea,
+    .channel__btn,.btn,.lightbox__media,.lightbox__close,.lightbox__nav{
+      border-radius:2px;
+    }
+    .modal__panel{border-color:var(--line);background:var(--modal-bg)}
+    .modal__close{border-radius:0}
+    .field input,.field select,.field textarea,.channel__btn,.service-choice{background:#0a0a0a;border-color:var(--line)}
+    .service-choice:has(input:checked){background:rgba(255,255,255,.08);border-color:var(--text)}
+    .service-choice input{border-radius:0}
+    .channel__btn[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+    .modal__submit{background:var(--text);color:var(--bg)}
+    .site-alert{background:rgba(8,8,8,.96);border-color:var(--line);border-radius:2px}
+    .my-booking__status{border-radius:0}
+    .footer{border-top-color:var(--line);background:var(--bg-deep)}
+    .footer__bottom{border-top-color:var(--line)}
+
+    @media (max-width:640px){
+      .header.is-scrolled{background:rgba(8,8,8,.97)}
+      .hero__title{font-size:clamp(2.7rem,13vw,4.5rem)}
+    }

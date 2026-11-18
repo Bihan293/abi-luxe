@@ -1,0 +1,63 @@
+/* ============================================================
+   ТЕМА: MONO NOIR — чёрно-белый редакционный стиль Abi Luxe.
+   ============================================================ */
+:root{
+  --font-body:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --color-scheme:dark;
+
+  --accent-rgb:245,245,245;
+  --accent:#f5f5f5;
+  --accent-light:#ffffff;
+  --accent-line:rgba(245,245,245,.4);
+  --on-accent:#080808;
+
+  --bg:#080808;
+  --bg-deep:#050505;
+  --bg-soft:#0d0d0d;
+  --text-rgb:245,245,245;
+  --text:#f5f5f5;
+  --muted:rgba(var(--text-rgb),.74);
+  --faint:rgba(var(--text-rgb),.52);
+  --line:rgba(var(--text-rgb),.2);
+  --line-soft:rgba(var(--text-rgb),.1);
+
+  --surface:#0d0d0d;
+  --surface-raised:#111111;
+  --surface-alt:#151515;
+  --surface-focus:#0f0f0f;
+  --surface-deep:#0a0a0a;
+  --surface-deep-2:#1a1a1a;
+  --modal-bg:#0b0b0b;
+  --select-bg:#0d0d0d;
+  --hero-bg:#080808;
+  --section-from:#0a0a0a;
+  --section-to:#060606;
+  --map-bg:#0c0c0c;
+  --lightbox-surface:#050505;
+
+  --panel-rgb:8,8,8;
+  --backdrop-rgb:0,0,0;
+  --shadow-rgb:0,0,0;
+  --highlight-rgb:255,255,255;
+  --on-media-rgb:255,255,255;
+  --on-media:#ffffff;
+
+  --danger-rgb:220,80,95;
+  --danger:#dc505f;
+  --danger-soft:#ef7b86;
+  --danger-light:#ff9aa4;
+  --success-rgb:150,210,170;
+  --success:#96d2aa;
+
+  --card-bg:linear-gradient(180deg,#111111,#0a0a0a);
+  --card-bg-soft:linear-gradient(180deg,#101010,#0b0b0b);
+  --card-bg-hover:linear-gradient(180deg,#141414,#0c0c0c);
+
+  --shot-1:linear-gradient(160deg,#2d2d2d,#0b0b0b);
+  --shot-2:linear-gradient(145deg,#222,#080808);
+  --shot-3:linear-gradient(150deg,#383838,#0d0d0d);
+  --shot-4:linear-gradient(150deg,#242424,#0a0a0a);
+  --shot-5:linear-gradient(150deg,#303030,#0b0b0b);
+  --shot-6:linear-gradient(150deg,#1d1d1d,#070707);
+}

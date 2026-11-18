@@ -40,7 +40,7 @@ abi-luxe/
 ├── site/
 │   ├── index.html          # разметка сайта
 │   ├── theme.css           # базовые стили + подключение темы
-│   ├── themes/             # темы внешнего вида (dark-gold, light-pink)
+│   ├── themes/             # темы внешнего вида (mono-noir и др.)
 │   ├── app.js              # логика сайта
 │   └── privacy.html        # политика обработки данных
 ├── scripts/
@@ -451,8 +451,8 @@ USE_WEBHOOK=false
 
 1. `.env` — токен, `ADMIN_IDS`, домен, база.
 2. `site/themes/*.css` — тема внешнего вида. В `site/theme.css` поменяйте
-   `@import url("themes/dark-gold.css");` на нужную тему. Готовые варианты:
-   `dark-gold` и `light-pink`. Подробности — в `site/themes/README.md`.
+   `@import url("themes/mono-noir.css");` на нужную тему. Для Abi Luxe
+   используется `mono-noir` — чёрно-белый редакционный стиль.
 3. `site/index.html` — статические тексты, которые не редактируются в админке:
    hero, блок «О баре», SEO-мета, JSON-LD, ссылка на Google Fonts.
 4. `site/privacy.html` — юридический текст политики и ссылка на шрифты.
