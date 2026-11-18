@@ -18,10 +18,10 @@
       var slotRequest = 0;
 
       var STATIC_SERVICES = {
-        'Мужская стрижка': { id: 0, name: 'Мужская стрижка', price: 2000, duration: 60 },
-        'Женская стрижка': { id: 0, name: 'Женская стрижка', price: 3000, duration: 60 },
-        'Детская стрижка': { id: 0, name: 'Детская стрижка', price: 2000, duration: 45 },
-        'Маникюр': { id: 0, name: 'Маникюр', price: 3000, duration: 60 }
+        'Стрижка': { id: 0, name: 'Стрижка', price: 2000, duration: 60 },
+        'Укладка': { id: 0, name: 'Укладка', price: 1500, duration: 40 },
+        'Комплекс': { id: 0, name: 'Комплекс', price: 3000, duration: 90 },
+        'Детская стрижка': { id: 0, name: 'Детская стрижка', price: 1500, duration: 45 }
       };
 
       function escapeHtml(value) {
@@ -1662,7 +1662,7 @@
         fitHeaderLogo();
 
         var heroEyebrow = document.getElementById('heroEyebrow');
-        if (heroEyebrow) heroEyebrow.textContent = 'Салон красоты · ' + city;
+        if (heroEyebrow) heroEyebrow.textContent = 'Салон · ' + city;
 
         var heroAddress = document.getElementById('heroAddress');
         if (heroAddress) heroAddress.innerHTML = '<b>' + escapeHtml(c.address) + '</b> · ' + escapeHtml(city);
@@ -1736,7 +1736,7 @@
         var footerPlace = document.getElementById('footerPlace');
         if (footerPlace) footerPlace.textContent = city + ' · ' + (c.address || '');
         var footerBrand = document.getElementById('footerBrandText');
-        if (footerBrand) footerBrand.textContent = 'Стрижки, укладки и маникюр в ' + city + '. Работаем ежедневно с 08:00 до 20:00.';
+        if (footerBrand) footerBrand.textContent = 'Парикмахерские услуги, уход и красота в ' + city + '. Работаем ежедневно.';
         var copyright = document.getElementById('copyrightBrand');
         if (copyright) copyright.textContent = brand;
 
@@ -1745,33 +1745,33 @@
         var mapCity = document.getElementById('mapCity');
         if (mapCity) mapCity.textContent = city;
         var mapCard = document.getElementById('mapCard');
-        if (mapCard) mapCard.setAttribute('aria-label', 'Стилизованная карта: салон красоты ' + brand + ', ' + (c.address || '') + ', ' + city);
+        if (mapCard) mapCard.setAttribute('aria-label', 'Стилизованная карта: салон ' + brand + ', ' + (c.address || '') + ', ' + city);
 
-        document.title = brand + ' — салон красоты в ' + city + ' | Стрижки, укладки, маникюр';
+        document.title = brand + ' — парикмахерская и салон красоты в ' + city + ' | Стрижки и уход';
         var description = document.querySelector('meta[name="description"]');
         if (description) {
-          description.content = brand + ' в ' + city + ': стрижки, укладки и маникюр. ' +
+          description.content = brand + ' в ' + city + ': стрижки, уход и красота. ' +
             (c.address || '') + ', ' + (c.hours || '') + '. Запись онлайн.';
         }
         var ogSiteName = document.querySelector('meta[property="og:site_name"]');
-        if (ogSiteName) ogSiteName.content = brand + ' — салон красоты';
+        if (ogSiteName) ogSiteName.content = brand + ' — парикмахерская и салон красоты';
         var ogUrl = document.querySelector('meta[property="og:url"]');
         if (ogUrl && /^https?:/i.test(location.protocol)) ogUrl.content = location.origin + '/';
         var ogTitle = document.querySelector('meta[property="og:title"]');
-        if (ogTitle) ogTitle.content = brand + ' — салон красоты в ' + city;
+        if (ogTitle) ogTitle.content = brand + ' — парикмахерская и салон красоты в ' + city;
         var ogDescription = document.querySelector('meta[property="og:description"]');
-        if (ogDescription) ogDescription.content = 'Стрижки, укладки и маникюр в ' + city + '. Запись онлайн.';
+        if (ogDescription) ogDescription.content = 'Стрижки, уход и красота в ' + city + '. Запись онлайн.';
         var twitterTitle = document.querySelector('meta[name="twitter:title"]');
-        if (twitterTitle) twitterTitle.content = brand + ' — салон красоты в ' + city;
+        if (twitterTitle) twitterTitle.content = brand + ' — парикмахерская и салон красоты в ' + city;
         var twitterDescription = document.querySelector('meta[name="twitter:description"]');
-        if (twitterDescription) twitterDescription.content = 'Стрижки, укладки и маникюр в ' + city + '. Строго по записи.';
+        if (twitterDescription) twitterDescription.content = 'Стрижки, уход и красота в ' + city + '. Строго по записи.';
 
         var schemaEl = document.getElementById('salonSchema');
         if (schemaEl) {
           try {
             var schema = JSON.parse(schemaEl.textContent);
             schema.name = brand;
-            schema.description = brand + ' в ' + city + ': стрижки, укладки и маникюр.';
+            schema.description = brand + ' в ' + city + ': стрижки, уход и красота.';
             schema.telephone = c.phone || '';
             schema.address = schema.address || {};
             schema.address.streetAddress = c.address || '';
