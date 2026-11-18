@@ -8,14 +8,10 @@
 В начале `site/theme.css` есть одна строка:
 
 ```css
-@import url("themes/dark-gold.css");
+@import url("themes/mono-noir.css");
 ```
 
-Поменяйте её на нужный файл:
-
-```css
-@import url("themes/light-pink.css");
-```
+Поменяйте её на нужный файл из папки `themes/`.
 
 Всё. Для нового салона можно скопировать любой пресет в
 `site/themes/my-theme.css` и менять только его.
@@ -24,9 +20,9 @@
 
 Готовые пресеты:
 
-- `dark-gold.css` — текущий тёмный вариант;
-- `light-pink.css` — светлый бело-розовый вариант;
-- `mono-noir.css` — чёрно-белый редакционный стиль Abi Luxe.
+- `mono-noir.css` — текущий чёрно-белый стиль Abi Luxe;
+- `dark-gold.css` — тёмный вариант шаблона;
+- `light-pink.css` — светлый вариант шаблона.
 
 В каждом файле меняются:
 
