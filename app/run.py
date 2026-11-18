@@ -46,7 +46,7 @@ async def run(cfg: Config) -> int:
     await site.start()
 
     print("\n" + "=" * 60)
-    print("  ЛЕЗВИЕ · барбершоп")
+    print("  Abi Luxe · салон красоты")
     print("=" * 60)
     print(f"  Сайт:    {cfg.local_base}")
     print(f"  API:     {cfg.local_base}/api/site")
@@ -137,7 +137,7 @@ async def show_startup_notice(ctx: Ctx) -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="ЛЕЗВИЕ — Telegram-бот и сайт")
+    parser = argparse.ArgumentParser(description="Abi Luxe — Telegram-бот и сайт")
     parser.add_argument("--api-only", action="store_true", help="Запустить только сайт и API, без Telegram")
     parser.add_argument("--host", default=None, help="Хост веб-сервера (по умолчанию 0.0.0.0)")
     parser.add_argument("--port", type=int, default=None, help="Порт веб-сервера (по умолчанию 8080)")

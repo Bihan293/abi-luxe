@@ -302,7 +302,7 @@ class PostgresBackend:
             command_timeout=20,
             statement_cache_size=0,  # совместимость с PgBouncer/Neon pooler
             max_inactive_connection_lifetime=60,
-            server_settings={"application_name": "lezvie-barbershop"},
+            server_settings={"application_name": "abi-luxe"},
         )
         async with self._pool.acquire() as conn:
             for statement in POSTGRES_SCHEMA.split(";"):

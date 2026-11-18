@@ -3,7 +3,7 @@
    Внешний вид (цвета, шрифты, фоны) лежит в site/themes/*.css.
    Чтобы сменить тему салона, поменяйте одну строку @import ниже.
    ============================================================ */
-@import url("themes/dark-gold.css");
+@import url("themes/light-pink.css");
 
     :root{
       --pad:clamp(20px,5vw,40px);

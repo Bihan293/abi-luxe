@@ -107,8 +107,8 @@ async def site_payload(ctx: Ctx, request: web.Request) -> dict:
         )
 
     return {
-        "brand": settings.get("brand", "ЛЕЗВИЕ"),
-        "city": settings.get("city", "Алматы"),
+        "brand": settings.get("brand", "Abi Luxe"),
+        "city": settings.get("city", "Шымкент"),
         "services": [
             {
                 "id": item["id"],
@@ -704,7 +704,7 @@ async def api_health(request: web.Request) -> web.Response:
     return web.json_response(
         {
             "ok": db_ok,
-            "service": "lezvie-barbershop",
+            "service": "abi-luxe",
             "time": datetime.now(ctx.cfg.tz).isoformat(timespec="seconds"),
             "bot": bool(ctx.bot),
             "database": "postgresql" if ctx.db.is_postgres else "sqlite",
@@ -768,8 +768,8 @@ async def handle_privacy(request: web.Request) -> web.StreamResponse:
     settings = await ctx.db.get_settings()
     html = path.read_text(encoding="utf-8")
     replacements = {
-        "{{brand}}": settings.get("brand", "ЛЕЗВИЕ"),
-        "{{city}}": settings.get("city", "Алматы"),
+        "{{brand}}": settings.get("brand", "Abi Luxe"),
+        "{{city}}": settings.get("city", "Шымкент"),
         "{{address}}": settings.get("address", ""),
         "{{phone}}": settings.get("phone", ""),
         "{{phone_digits}}": phone_digits(settings.get("phone", "")),

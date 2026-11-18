@@ -9,7 +9,7 @@ from .services import combine_services, service_items
 async def client_home_text(ctx: Ctx) -> str:
     settings = await ctx.db.get_settings()
     return (
-        f"💈 <b>{esc(settings.get('brand', 'ЛЕЗВИЕ'))}</b> · {esc(settings.get('city', 'Алматы'))}\n\n"
+        f"💈 <b>{esc(settings.get('brand', 'Abi Luxe'))}</b> · {esc(settings.get('city', 'Шымкент'))}\n\n"
         f"{esc(settings.get('address', ''))}\n"
         f"{esc(settings_hours_text(settings))}\n"
         + (f"{esc(settings_hours_note(settings))}\n" if settings_hours_note(settings) else "")

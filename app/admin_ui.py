@@ -16,7 +16,7 @@ async def admin_home_text(ctx: Ctx) -> str:
 
     lines = [
         "⚙️ <b>Админ-панель</b>",
-        f"{esc(settings.get('brand', 'ЛЕЗВИЕ'))} · {esc(settings.get('city', 'Алматы'))}",
+        f"{esc(settings.get('brand', 'Abi Luxe'))} · {esc(settings.get('city', 'Шымкент'))}",
         "",
         f"📅 Сегодня: <b>{stats['count']}</b> записей · <b>{money(stats['total'])}</b>",
         f"🆕 Новых заявок: <b>{new_count}</b> · 👨‍💈 Мастеров: <b>{master_count}</b>",
@@ -710,14 +710,14 @@ def why_preview(draft: dict) -> str:
 # ---------- контакты ----------
 
 CONTACTS = [
-    ("brand", "Название", "ЛЕЗВИЕ"),
-    ("city", "Город", "Алматы"),
-    ("address", "Адрес", "пр. Достык, 132"),
-    ("address_note", "Адрес: уточнение", "уг. ул. Кабанбай батыра"),
-    ("phone", "Телефон", "+7 700 000 00 00"),
-    ("whatsapp", "WhatsApp (цифры)", "77000000000"),
-    ("twogis_url", "Ссылка 2ГИС", "https://2gis.kz/..."),
-    ("instagram", "Instagram", "@lezvie.barber"),
+    ("brand", "Название", "Abi Luxe"),
+    ("city", "Город", "Шымкент"),
+    ("address", "Адрес", "Улица Центральная, 25а"),
+    ("address_note", "Адрес: уточнение", "ДМ Кайнар Булак, Абайский район"),
+    ("phone", "Телефон", "+7 705 270 60 06"),
+    ("whatsapp", "WhatsApp (цифры)", "77052706006"),
+    ("twogis_url", "Ссылка 2ГИС", "https://2gis.kz/shymkent/geo/70000001102509766"),
+    ("instagram", "Instagram", "@Qairosh_salon"),
 ]
 CONTACT_MAP = {key: (label, placeholder) for key, label, placeholder in CONTACTS}
 

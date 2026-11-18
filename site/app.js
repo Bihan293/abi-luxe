@@ -18,10 +18,10 @@
       var slotRequest = 0;
 
       var STATIC_SERVICES = {
-        'Стрижка': { id: 0, name: 'Стрижка', price: 4000, duration: 60 },
-        'Борода': { id: 0, name: 'Борода', price: 2500, duration: 40 },
-        'Комплекс': { id: 0, name: 'Комплекс', price: 6000, duration: 90 },
-        'Детская стрижка': { id: 0, name: 'Детская стрижка', price: 3000, duration: 40 }
+        'Мужская стрижка': { id: 0, name: 'Мужская стрижка', price: 2000, duration: 60 },
+        'Женская стрижка': { id: 0, name: 'Женская стрижка', price: 3000, duration: 60 },
+        'Детская стрижка': { id: 0, name: 'Детская стрижка', price: 2000, duration: 45 },
+        'Маникюр': { id: 0, name: 'Маникюр', price: 3000, duration: 60 }
       };
 
       function escapeHtml(value) {
@@ -373,7 +373,7 @@
         var image = figure.querySelector('.shot__img');
         var caption = figure.getAttribute('data-caption') || '';
         lightboxImage.src = (image && image.getAttribute('src')) || figure.getAttribute('data-full-src') || '';
-        lightboxImage.alt = (image && image.alt) || caption || 'Фото барбершопа';
+        lightboxImage.alt = (image && image.alt) || caption || 'Фото салона';
         if (lightboxCaption) lightboxCaption.textContent = caption;
         if (lightboxCount) {
           lightboxCount.textContent = lightboxItems.length > 1
@@ -977,7 +977,7 @@
         }
 
         if (digits.length < 10) {
-          setError(phoneInput, 'Укажите телефон в формате +7 700 000 00 00');
+          setError(phoneInput, 'Укажите телефон в формате +7 705 270 60 06');
           valid = false;
           if (!focusEl) focusEl = phoneInput;
         }
@@ -1062,7 +1062,7 @@
       });
 
       /* ---------- Мои записи на сайте ---------- */
-      var MY_TOKENS_KEY = 'lezvie_site_booking_tokens';
+      var MY_TOKENS_KEY = 'abi_luxe_site_booking_tokens';
       var myBookingsModal = document.getElementById('myBookingsModal');
       var myBookingsList = document.getElementById('myBookingsList');
       var myBookingsMessage = document.getElementById('myBookingsMessage');
@@ -1508,15 +1508,15 @@
         grid.innerHTML = masters.map(function (master) {
           var hasPhoto = !!master.photo_url;
           var media = hasPhoto
-            ? '<img src="' + escapeHtml(master.photo_url) + '" alt="' + escapeHtml(master.name) + ', барбер" loading="lazy" decoding="async">'
+            ? '<img src="' + escapeHtml(master.photo_url) + '" alt="' + escapeHtml(master.name) + ', мастер" loading="lazy" decoding="async">'
             : '<span>' + escapeHtml(initialsFromName(master.name)) + '</span>';
           return '' +
             '<article class="master">' +
               '<div class="master__media' + (hasPhoto ? ' master__media--photo' : ' master__media--empty') + '" data-initials="' + escapeHtml(initialsFromName(master.name)) + '">' + media + '</div>' +
               '<div class="master__body">' +
-                '<span class="master__role">Барбер</span>' +
+                '<span class="master__role">Мастер</span>' +
                 '<h3>' + escapeHtml(master.name) + '</h3>' +
-                '<p>' + escapeHtml(master.description || 'Мастер барбершопа.') + '</p>' +
+                '<p>' + escapeHtml(master.description || 'Мастер салона.') + '</p>' +
                 (master.hours ? '<span class="master__hours">' + escapeHtml(master.hours) + '</span>' : '') +
                 '<a class="btn btn--ghost btn--sm" href="#contacts" data-booking data-master="' + escapeHtml(master.name) + '" data-master-id="' + escapeHtml(master.id) + '">Записаться</a>' +
               '</div>' +
@@ -1562,7 +1562,7 @@
         grid.innerHTML = items.map(function (item, index) {
           var gradient = (index % 6) + 1;
           var image = item.image_url
-            ? '<div class="shot__media"><img class="shot__img" src="' + escapeHtml(item.image_url) + '" alt="' + escapeHtml(item.caption || 'Фото барбершопа') + '" loading="lazy" decoding="async"></div>'
+            ? '<div class="shot__media"><img class="shot__img" src="' + escapeHtml(item.image_url) + '" alt="' + escapeHtml(item.caption || 'Фото салона') + '" loading="lazy" decoding="async"></div>'
             : '<div class="shot__media" aria-hidden="true"></div>';
           var caption = item.caption || 'фото';
           var interactive = item.image_url
@@ -1646,8 +1646,8 @@
 
       function applyContacts(data) {
         var c = data.contacts || {};
-        var brand = data.brand || 'ЛЕЗВИЕ';
-        var city = data.city || 'Алматы';
+        var brand = data.brand || 'Abi Luxe';
+        var city = data.city || 'Шымкент';
         var whatsapp = onlyDigits(c.whatsapp) || onlyDigits(c.phone_digits) || '77000000000';
 
         document.querySelectorAll('.logo__word').forEach(function (el) {
@@ -1662,7 +1662,7 @@
         fitHeaderLogo();
 
         var heroEyebrow = document.getElementById('heroEyebrow');
-        if (heroEyebrow) heroEyebrow.textContent = 'Барбершоп · ' + city + ' · с 2021';
+        if (heroEyebrow) heroEyebrow.textContent = 'Салон красоты · ' + city;
 
         var heroAddress = document.getElementById('heroAddress');
         if (heroAddress) heroAddress.innerHTML = '<b>' + escapeHtml(c.address) + '</b> · ' + escapeHtml(city);
@@ -1680,7 +1680,7 @@
           menuAddress.innerHTML = '<b>' + escapeHtml(c.address || '') + '</b> · ' + escapeHtml(city);
         }
         var menuHours = document.getElementById('menuHours');
-        if (menuHours) menuHours.textContent = c.hours || '10:00–21:00';
+        if (menuHours) menuHours.textContent = c.hours || '08:00–20:00';
 
         var addressEl = document.getElementById('contactAddress');
         if (addressEl) {
@@ -1736,7 +1736,7 @@
         var footerPlace = document.getElementById('footerPlace');
         if (footerPlace) footerPlace.textContent = city + ' · ' + (c.address || '');
         var footerBrand = document.getElementById('footerBrandText');
-        if (footerBrand) footerBrand.textContent = 'Мужские стрижки, борода и бритьё в центре ' + city + '. С 2021 года.';
+        if (footerBrand) footerBrand.textContent = 'Стрижки, укладки и маникюр в ' + city + '. Работаем ежедневно с 08:00 до 20:00.';
         var copyright = document.getElementById('copyrightBrand');
         if (copyright) copyright.textContent = brand;
 
@@ -1745,33 +1745,33 @@
         var mapCity = document.getElementById('mapCity');
         if (mapCity) mapCity.textContent = city;
         var mapCard = document.getElementById('mapCard');
-        if (mapCard) mapCard.setAttribute('aria-label', 'Стилизованная карта: барбершоп ' + brand + ', ' + (c.address || '') + ', ' + city);
+        if (mapCard) mapCard.setAttribute('aria-label', 'Стилизованная карта: салон красоты ' + brand + ', ' + (c.address || '') + ', ' + city);
 
-        document.title = brand + ' — барбершоп в ' + city + ' | Стрижка, борода, бритьё';
+        document.title = brand + ' — салон красоты в ' + city + ' | Стрижки, укладки, маникюр';
         var description = document.querySelector('meta[name="description"]');
         if (description) {
-          description.content = brand + ' в ' + city + ': мужские стрижки, борода и бритьё. ' +
+          description.content = brand + ' в ' + city + ': стрижки, укладки и маникюр. ' +
             (c.address || '') + ', ' + (c.hours || '') + '. Запись онлайн.';
         }
         var ogSiteName = document.querySelector('meta[property="og:site_name"]');
-        if (ogSiteName) ogSiteName.content = brand + ' — барбершоп';
+        if (ogSiteName) ogSiteName.content = brand + ' — салон красоты';
         var ogUrl = document.querySelector('meta[property="og:url"]');
         if (ogUrl && /^https?:/i.test(location.protocol)) ogUrl.content = location.origin + '/';
         var ogTitle = document.querySelector('meta[property="og:title"]');
-        if (ogTitle) ogTitle.content = brand + ' — барбершоп в ' + city;
+        if (ogTitle) ogTitle.content = brand + ' — салон красоты в ' + city;
         var ogDescription = document.querySelector('meta[property="og:description"]');
-        if (ogDescription) ogDescription.content = 'Мужские стрижки, борода и бритьё в центре ' + city + '. Запись онлайн.';
+        if (ogDescription) ogDescription.content = 'Стрижки, укладки и маникюр в ' + city + '. Запись онлайн.';
         var twitterTitle = document.querySelector('meta[name="twitter:title"]');
-        if (twitterTitle) twitterTitle.content = brand + ' — барбершоп в ' + city;
+        if (twitterTitle) twitterTitle.content = brand + ' — салон красоты в ' + city;
         var twitterDescription = document.querySelector('meta[name="twitter:description"]');
-        if (twitterDescription) twitterDescription.content = 'Мужские стрижки, борода и бритьё в центре ' + city + '. Строго по записи.';
+        if (twitterDescription) twitterDescription.content = 'Стрижки, укладки и маникюр в ' + city + '. Строго по записи.';
 
         var schemaEl = document.getElementById('salonSchema');
         if (schemaEl) {
           try {
             var schema = JSON.parse(schemaEl.textContent);
             schema.name = brand;
-            schema.description = brand + ' в ' + city + ': мужские стрижки, борода и бритьё.';
+            schema.description = brand + ' в ' + city + ': стрижки, укладки и маникюр.';
             schema.telephone = c.phone || '';
             schema.address = schema.address || {};
             schema.address.streetAddress = c.address || '';

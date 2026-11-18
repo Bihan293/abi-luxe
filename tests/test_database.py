@@ -30,7 +30,7 @@ class DatabaseTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(len(masters), 1)
         schedule = await self.db.get_master_schedule(masters[0]["id"])
         self.assertEqual(len(schedule), 7)
-        self.assertEqual(schedule[0]["work_start"], "10:00")
+        self.assertEqual(schedule[0]["work_start"], "08:00")
 
     async def test_booking_and_reschedule(self):
         order, error = await self.db.create_order(
@@ -173,8 +173,9 @@ class DatabaseTests(unittest.IsolatedAsyncioTestCase):
     async def test_site_stats_seed_and_crud(self):
         rows = await self.db.list_site_stats()
         self.assertEqual(len(rows), 3)
-        self.assertEqual(rows[0]["value"], "5")
-        self.assertEqual(rows[1]["plus"], 1)
+        self.assertEqual(rows[0]["value"], "08:00–20:00")
+        self.assertEqual(rows[1]["value"], "25")
+        self.assertEqual(rows[1]["plus"], 0)
 
         numeric_id = await self.db.add_site_stat(
             value="50", label="точек|по всему миру", plus=1
